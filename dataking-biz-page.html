@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data King SAS — Automatisation Marketing No-Code & IA</title>
+  <meta name="description" content="Data King SAS aide les PME, indépendants et créateurs à automatiser leur acquisition, leur CRM et leurs relances marketing grâce au No-Code et à l’IA." />
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0E1424;
+      --panel-2:#121A2E;
+      --text:#F4F7FB;
+      --muted:#A8B3C7;
+      --line:#23304A;
+      --blue:#4F8CFF;
+      --cyan:#26D9D0;
+      --gold:#F5B84B;
+      --radius:22px;
+      --shadow:0 24px 80px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(79,140,255,.22), transparent 32%),
+        radial-gradient(circle at 80% 0%, rgba(38,217,208,.16), transparent 28%),
+        linear-gradient(180deg, #070A12 0%, #0B1020 52%, #070A12 100%);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px, calc(100% - 40px)); margin:auto}
+    header{
+      position:sticky; top:0; z-index:20;
+      background:rgba(7,10,18,.78); backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;font-weight:900;
+      background:linear-gradient(135deg,var(--gold),var(--blue)); color:#08101F;
+      box-shadow:0 10px 30px rgba(79,140,255,.25);
+    }
+    .links{display:flex;gap:22px;color:var(--muted);font-size:14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:13px 18px;border-radius:999px;font-weight:750;
+      background:linear-gradient(135deg,var(--blue),var(--cyan)); color:#06101D;
+      box-shadow:0 18px 42px rgba(79,140,255,.22);
+      border:0;
+    }
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none}
+    .hero{padding:86px 0 58px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+    .eyebrow{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:13px}
+    h1{font-size:clamp(40px,6vw,76px);line-height:.98;margin:14px 0 22px;letter-spacing:-.05em}
+    .lead{font-size:20px;color:var(--muted);max-width:720px;margin-bottom:28px}
+    .cta{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0}
+    .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+    .proof div{padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)}
+    .proof strong{display:block;font-size:22px;color:#fff}.proof span{color:var(--muted);font-size:13px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.11);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .system{padding:28px;position:relative;overflow:hidden}
+    .system:before{content:"";position:absolute;inset:-80px -80px auto auto;width:220px;height:220px;border-radius:50%;background:rgba(38,217,208,.16)}
+    .node{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(7,10,18,.65);margin:14px 0;position:relative}
+    .node b{display:block;color:#fff}.node span{color:var(--muted);font-size:14px}
+    section{padding:62px 0}
+    .section-head{max-width:760px;margin-bottom:28px}.section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.08;margin:0 0 12px;letter-spacing:-.035em}.section-head p{color:var(--muted);font-size:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .service{padding:24px}.service h3{margin:8px 0 10px;font-size:22px}.service p{color:var(--muted);margin:0 0 18px}.tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(79,140,255,.12);border:1px solid rgba(79,140,255,.25);color:#CFE0FF;font-size:12px;font-weight:800}.price{font-size:28px;font-weight:900;margin-top:10px;color:#fff}
+    ul{margin:14px 0 0;padding-left:18px;color:var(--muted)}
+    .process{counter-reset:step}.process .card{padding:24px}.process .card:before{counter-increment:step;content:"0" counter(step);display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;background:rgba(245,184,75,.13);border:1px solid rgba(245,184,75,.28);color:var(--gold);font-weight:900;margin-bottom:14px}
+    .tools{display:flex;flex-wrap:wrap;gap:10px}.tools span{padding:10px 13px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid var(--line);color:#DCE6F8;font-weight:650;font-size:14px}
+    .about{padding:32px}.about p{color:var(--muted);font-size:18px}.highlight{color:#fff;font-weight:800}
+    .contact{padding:38px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;background:linear-gradient(135deg,rgba(79,140,255,.16),rgba(38,217,208,.10));}
+    .contact h2{margin:0 0 10px;font-size:38px;letter-spacing:-.035em}.contact p{color:var(--muted);margin:0}.contact-box{padding:22px;border-radius:18px;background:rgba(7,10,18,.55);border:1px solid var(--line)}
+    footer{padding:34px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.07);font-size:14px}
+    @media(max-width:880px){.hero-grid,.grid-3,.grid-2,.contact{grid-template-columns:1fr}.links{display:none}.proof{grid-template-columns:1fr}h1{font-size:44px}.hero{padding-top:52px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#top"><span class="logo">DK</span><span>Data King SAS</span></a>
+        <div class="links">
+          <a href="#services">Services</a>
+          <a href="#methode">Méthode</a>
+          <a href="#outils">Outils</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="btn" href="mailto:issam.saby@gmail.com">Demander un audit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Automatisation Marketing No-Code & IA</div>
+          <h1>Transformez vos prospects en clients avec un système marketing automatisé.</h1>
+          <p class="lead">Data King SAS aide les PME, indépendants, consultants et créateurs à centraliser leurs leads, automatiser leurs relances et piloter leur acquisition grâce à des outils No-Code simples, rapides et efficaces.</p>
+          <div class="cta">
+            <a class="btn" href="mailto:issam.saby@gmail.com?subject=Demande%20d'audit%20automatisation%20marketing">Réserver un audit</a>
+            <a class="btn secondary" href="#services">Voir les services</a>
+          </div>
+          <div class="proof">
+            <div><strong>CRM</strong><span>Airtable, HubSpot, pipelines</span></div>
+            <div><strong>Automation</strong><span>Zapier, Make, workflows</span></div>
+            <div><strong>Growth</strong><span>SEA, funnels, email marketing</span></div>
+          </div>
+        </div>
+        <div class="card system" aria-label="Système d'automatisation marketing">
+          <div class="node"><b>1. Capture de leads</b><span>Landing page, formulaire, source de trafic, tracking.</span></div>
+          <div class="node"><b>2. Centralisation CRM</b><span>Base prospects, scoring, pipeline commercial, segmentation.</span></div>
+          <div class="node"><b>3. Relances automatisées</b><span>Email, notifications, tâches commerciales, nurturing.</span></div>
+          <div class="node"><b>4. Reporting & optimisation</b><span>KPIs, taux de conversion, ROI, recommandations.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>Des offres claires pour installer rapidement un système marketing opérationnel, sans développement lourd.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card service">
+            <span class="tag">CRM No-Code</span>
+            <h3>CRM & Pipeline Commercial</h3>
+            <p>Création d’un CRM simple pour suivre vos prospects, opportunités, relances et rendez-vous.</p>
+            <ul><li>Airtable ou HubSpot</li><li>Pipeline sur mesure</li><li>Tableaux de bord</li><li>Formation utilisateur</li></ul>
+            <div class="price">À partir de 490 €</div>
+          </article>
+          <article class="card service">
+            <span class="tag">Lead Generation</span>
+            <h3>Acquisition de Leads Automatisée</h3>
+            <p>Un système pour capturer, qualifier et transmettre automatiquement vos nouveaux prospects.</p>
+            <ul><li>Landing page Carrd</li><li>Formulaire connecté</li><li>Qualification automatique</li><li>Notification instantanée</li></ul>
+            <div class="price">À partir de 790 €</div>
+          </article>
+          <article class="card service">
+            <span class="tag">Email Automation</span>
+            <h3>Marketing Automation</h3>
+            <p>Automatisation des séquences email, relances, segmentation et nurturing client.</p>
+            <ul><li>ActiveCampaign / Brevo</li><li>Séquences email</li><li>Relances automatiques</li><li>Segmentation CRM</li></ul>
+            <div class="price">À partir de 990 €</div>
+          </article>
+        </div>
+        <div class="grid-2" style="margin-top:18px">
+          <article class="card service">
+            <span class="tag">IA</span>
+            <h3>Assistant IA Marketing</h3>
+            <p>Intégration de l’IA pour qualifier les demandes, générer des réponses, résumer les échanges et accélérer la production de contenu.</p>
+            <div class="price">À partir de 1 490 €</div>
+          </article>
+          <article class="card service">
+            <span class="tag">Système complet</span>
+            <h3>CRM + Automatisation + Reporting</h3>
+            <p>Un système complet pour gérer l’acquisition, le suivi commercial, les relances et le reporting dans un seul environnement.</p>
+            <div class="price">À partir de 2 490 €</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="methode">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Méthode de travail</h2>
+          <p>Une approche pragmatique : comprendre votre processus, automatiser ce qui crée de la valeur, puis vous rendre autonome.</p>
+        </div>
+        <div class="grid-3 process">
+          <div class="card"><h3>Audit</h3><p>Analyse de votre acquisition, de vos outils, de vos relances et de vos points de friction.</p></div>
+          <div class="card"><h3>Architecture</h3><p>Définition du CRM, des champs, des automatisations, des statuts et des scénarios.</p></div>
+          <div class="card"><h3>Implémentation</h3><p>Configuration des outils, tests, documentation, formation et optimisation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="outils">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Outils utilisés</h2>
+          <p>Des solutions modernes, rapides à déployer et adaptées aux petites structures.</p>
+        </div>
+        <div class="tools">
+          <span>Airtable</span><span>Zapier</span><span>Make</span><span>ActiveCampaign</span><span>Brevo</span><span>HubSpot</span><span>Softr</span><span>Carrd</span><span>Google Workspace</span><span>Canva</span><span>ChatGPT</span><span>OpenAI</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="card about">
+          <h2>Pourquoi Data King SAS ?</h2>
+          <p><span class="highlight">Data King SAS</span> combine une expérience solide en marketing digital, affiliation, acquisition de trafic, funnels de vente et outils No-Code. L’objectif n’est pas d’ajouter de la complexité, mais de créer un système clair qui permet de gagner du temps, mieux suivre les prospects et augmenter le taux de conversion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="card contact">
+          <div>
+            <h2>Prêt à automatiser votre marketing ?</h2>
+            <p>Demandez un audit pour identifier les tâches répétitives, les pertes de leads et les automatisations prioritaires.</p>
+          </div>
+          <div class="contact-box">
+            <p><strong>Issam Saby</strong><br>Consultant Automatisation Marketing No-Code & IA</p>
+            <p style="margin-top:14px">📍 Toulouse / Muret<br>📧 <a href="mailto:issam.saby@gmail.com">issam.saby@gmail.com</a></p>
+            <p style="margin-top:18px"><a class="btn" href="mailto:issam.saby@gmail.com?subject=Audit%20Data%20King%20SAS">Me contacter</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© Data King SAS — Automatisation Marketing No-Code & IA. Tous droits réservés.</div>
+  </footer>
+</body>
+</html>
