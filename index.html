@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataKing — Automatisation Marketing & IA</title>
+  <meta name="description" content="DataKing aide les PME, indépendants et équipes commerciales à automatiser leurs tâches marketing, CRM et IA avec des solutions no-code simples et efficaces." />
+  <style>
+    :root {
+      --bg: #080f1f;
+      --bg-soft: #101a33;
+      --card: rgba(255,255,255,.07);
+      --text: #f7f9ff;
+      --muted: #aab5d1;
+      --accent: #00e5ff;
+      --accent-2: #7c3cff;
+      --green: #26f0a6;
+      --border: rgba(255,255,255,.13);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(124,60,255,.35), transparent 30%),
+                  radial-gradient(circle at top right, rgba(0,229,255,.25), transparent 28%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(8,15,31,.78);
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 0;
+    }
+    .logo { font-weight: 900; font-size: 1.35rem; letter-spacing: -.04em; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: .95rem; }
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 13px 20px; border-radius: 999px;
+      font-weight: 800; border: 1px solid transparent;
+      transition: .2s ease;
+    }
+    .btn-primary {
+      color: #03101b;
+      background: linear-gradient(135deg, var(--accent), var(--green));
+      box-shadow: 0 16px 44px rgba(0,229,255,.25);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { border-color: var(--border); color: var(--text); background: rgba(255,255,255,.04); }
+
+    .hero { padding: 92px 0 72px; }
+    .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 46px; align-items: center; }
+    .badge {
+      display: inline-flex; gap: 8px; align-items: center;
+      color: var(--green); background: rgba(38,240,166,.09);
+      border: 1px solid rgba(38,240,166,.25); border-radius: 999px;
+      padding: 8px 13px; font-weight: 800; font-size: .88rem;
+      margin-bottom: 22px;
+    }
+    h1 { font-size: clamp(2.5rem, 6vw, 5.4rem); line-height: .95; letter-spacing: -.07em; margin-bottom: 24px; }
+    h1 strong { color: var(--accent); }
+    .lead { font-size: 1.25rem; color: var(--muted); max-width: 720px; margin-bottom: 32px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+    .proof { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: .95rem; }
+    .proof b { color: var(--text); }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
+      border: 1px solid var(--border); border-radius: 28px;
+      padding: 26px; box-shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+    .workflow { display: grid; gap: 14px; }
+    .step {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: rgba(255,255,255,.055); border: 1px solid var(--border);
+      border-radius: 18px; padding: 16px;
+    }
+    .num {
+      width: 34px; height: 34px; border-radius: 50%; flex: 0 0 34px;
+      display: grid; place-items: center; color: #03101b;
+      background: var(--accent); font-weight: 900;
+    }
+    .step h3 { font-size: 1rem; margin-bottom: 2px; }
+    .step p { color: var(--muted); font-size: .94rem; }
+
+    section { padding: 72px 0; }
+    .section-head { max-width: 760px; margin-bottom: 34px; }
+    h2 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1; letter-spacing: -.055em; margin-bottom: 16px; }
+    .section-head p { color: var(--muted); font-size: 1.12rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 24px;
+      padding: 24px; min-height: 260px;
+    }
+    .icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h3 { font-size: 1.25rem; margin-bottom: 10px; }
+    .card p, .card li { color: var(--muted); }
+    .card ul { margin-top: 14px; padding-left: 18px; }
+
+    .offer {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .price { font-size: 2rem; font-weight: 900; margin: 16px 0; }
+    .price small { color: var(--muted); font-size: .9rem; font-weight: 600; }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(0,229,255,.18), rgba(124,60,255,.18));
+      border: 1px solid var(--border); border-radius: 32px; padding: 46px 24px;
+    }
+    .cta p { color: var(--muted); margin: 12px auto 24px; max-width: 640px; }
+
+    footer { padding: 34px 0; color: var(--muted); border-top: 1px solid var(--border); }
+    footer .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    @media (max-width: 860px) {
+      .hero-grid, .cards, .offer { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero { padding-top: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Data<span>King</span></div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#offres">Offres</a>
+          <a href="#methode">Méthode</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="btn btn-secondary" href="#contact">Audit gratuit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">⚡ Automatisation marketing · No-Code · IA</div>
+          <h1>Automatisez vos tâches. <strong>Gagnez du temps.</strong></h1>
+          <p class="lead">DataKing aide les indépendants, PME et équipes commerciales à transformer leurs tâches répétitives en systèmes automatisés : CRM, emails, prospection, reporting et assistants IA.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Réserver un audit gratuit</a>
+            <a class="btn btn-secondary" href="#offres">Voir les offres</a>
+          </div>
+          <div class="proof">
+            <span><b>CRM</b> automatisé</span>
+            <span><b>Make / n8n</b></span>
+            <span><b>Google Workspace</b></span>
+            <span><b>IA opérationnelle</b></span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="workflow">
+            <div class="step"><div class="num">1</div><div><h3>Un prospect remplit un formulaire</h3><p>Site web, landing page, QR code, LinkedIn ou Google Forms.</p></div></div>
+            <div class="step"><div class="num">2</div><div><h3>Le contact arrive dans votre CRM</h3><p>Les données sont nettoyées, classées et enrichies automatiquement.</p></div></div>
+            <div class="step"><div class="num">3</div><div><h3>Les relances partent seules</h3><p>Email de bienvenue, suivi J+3, notification interne.</p></div></div>
+            <div class="step"><div class="num">4</div><div><h3>Vous suivez tout en dashboard</h3><p>Tableau de bord clair pour voir les leads, conversions et actions.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ce que DataKing met en place</h2>
+          <p>Des systèmes simples, concrets et orientés résultat. Pas de jargon inutile : on automatise ce qui vous fait perdre du temps.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">🎯</div><h3>Acquisition & leads</h3><p>Capture de prospects, formulaires intelligents, qualification automatique et relances email.</p><ul><li>Landing pages</li><li>CRM</li><li>Emails automatisés</li></ul></article>
+          <article class="card"><div class="icon">🤖</div><h3>Assistants IA</h3><p>Des assistants connectés à vos documents pour répondre, trier, rédiger et accélérer vos opérations.</p><ul><li>FAQ IA</li><li>Réponses email</li><li>Base de connaissances</li></ul></article>
+          <article class="card"><div class="icon">📊</div><h3>Reporting & dashboards</h3><p>Suivi clair de vos actions marketing, ventes, contacts et performances commerciales.</p><ul><li>Google Sheets</li><li>Looker Studio</li><li>KPIs simples</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="offres">
+      <div class="container">
+        <div class="section-head">
+          <h2>Offres de lancement</h2>
+          <p>Des packs clairs pour démarrer rapidement, adaptés aux petites structures et aux indépendants.</p>
+        </div>
+        <div class="offer">
+          <article class="card"><h3>Starter Automatisation</h3><p>Pour automatiser une tâche répétitive simple.</p><div class="price">490€ <small>à partir de</small></div><ul><li>1 workflow</li><li>Formulaire ou CRM</li><li>Email automatique</li><li>Documentation simple</li></ul></article>
+          <article class="card"><h3>CRM & Relance</h3><p>Pour ne plus perdre vos prospects.</p><div class="price">790€ <small>à partir de</small></div><ul><li>CRM structuré</li><li>Pipeline commercial</li><li>Relances J+1 / J+3</li><li>Dashboard de suivi</li></ul></article>
+          <article class="card"><h3>Assistant IA Business</h3><p>Pour accélérer support, réponses et documentation.</p><div class="price">990€ <small>à partir de</small></div><ul><li>Assistant personnalisé</li><li>Base documentaire</li><li>Prompts métier</li><li>Formation prise en main</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="methode">
+      <div class="container">
+        <div class="section-head">
+          <h2>Une méthode en 4 étapes</h2>
+          <p>On part de vos tâches réelles, puis on construit un système fiable et maintenable.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><h3>1. Audit</h3><p>Identification des tâches chronophages et des points de friction.</p></article>
+          <article class="card"><h3>2. Prototype</h3><p>Création rapide d'un premier workflow testable.</p></article>
+          <article class="card"><h3>3. Déploiement</h3><p>Mise en production, tests, sécurité et documentation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h2>Prêt à automatiser votre activité ?</h2>
+          <p>Réservez un audit gratuit de 30 minutes. Nous identifions ensemble une automatisation simple à mettre en place rapidement.</p>
+          <a class="btn btn-primary" href="mailto:contact@dataking.biz?subject=Audit%20gratuit%20DataKing">Demander un audit gratuit</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 DataKing — Automatisation Marketing & IA</span>
+      <span>contact@dataking.biz</span>
+    </div>
+  </footer>
+</body>
+</html>
